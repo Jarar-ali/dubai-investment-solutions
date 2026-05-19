@@ -82,6 +82,7 @@ a { text-decoration: none; color: inherit; }
   background-size: 200px;
 }
 .hero-content { position: relative; z-index: 2; max-width: 780px; }
+.hero-container { padding-top: 140px; padding-bottom: 200px; }
 .hero-overline { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 24px; }
 .hero-overline::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
 .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 24px; }
@@ -262,9 +263,34 @@ a { text-decoration: none; color: inherit; }
 .gap-4 { gap: 16px; }
 .hidden { display: none !important; }
 @media(max-width:768px){
-  .section { padding: 72px 0; }
-  .hero-stats-inner { grid-template-columns: repeat(2,1fr); }
-  .hero-title { font-size: 2.4rem; }
-  .hero-ctas { flex-direction: column; }
+  .section { padding: 64px 0; }
   .container { padding: 0 20px; }
+  .hero-container { padding-top: 100px; padding-bottom: 160px; }
+  .hero-stats-inner { grid-template-columns: repeat(2,1fr); }
+  .hero-title { font-size: 2.2rem; }
+  .hero-ctas { flex-direction: column; align-items: flex-start; }
+  .hero-stat { padding: 16px 20px; }
+  .hero-stat-num { font-size: 1.5rem; }
+  /* About: badge mustn't clip off-screen */
+  .about-badge { position: relative; left: 0; bottom: 0; margin-top: 20px; display: inline-block; border-radius: 14px; }
+  .about-img { height: 300px; }
+  /* Card padding tightened */
+  .contact-info-card, .contact-form-card { padding: 28px 20px; }
+  .why-card { padding: 28px 20px; }
+  /* Modal */
+  .modal { padding: 28px 20px; border-radius: 18px; }
+  .modal-title { font-size: 1.3rem; }
+  /* Footer */
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  /* Floating WA */
+  .fab-whatsapp { width: 52px; height: 52px; font-size: 1.3rem; bottom: 20px; right: 20px; }
+}
+@media(max-width:420px){
+  .hero-title { font-size: 1.9rem; }
+  .hero-overline { font-size: 0.65rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .btn-whatsapp, .btn-outline { width: 100%; justify-content: center; }
+  .section-title { font-size: 1.8rem; }
+  .testimonial-card { padding: 24px 18px; }
+  .service-card-body { padding: 20px; }
 }
