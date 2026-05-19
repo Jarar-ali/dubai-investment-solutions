@@ -40,7 +40,7 @@ function initHero() {
 function initTypewriter() {
   const el = document.getElementById('typewriter');
   if (!el) return;
-  const words = ['Dubai Properties', 'Golden Visa', 'Virtual Offices', 'Labor Camps', 'Smart Investment'];
+  const words = ['Physical Offices', 'Labor Camps', 'Virtual Offices', 'Property Investments'];
   let wordIdx = 0, charIdx = 0, deleting = false;
 
   function tick() {
