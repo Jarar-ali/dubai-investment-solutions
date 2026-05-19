@@ -1,534 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dubai Investment Solutions - Premium Real Estate & Business Services</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'playfair': ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        'mocha': {
-                            50: '#faf7f3',
-                            100: '#f4ede3',
-                            200: '#e8d8c4',
-                            300: '#d9bd9e',
-                            400: '#c89d76',
-                            500: '#bc8659',
-                            600: '#af744e',
-                            700: '#925f42',
-                            800: '#764e3a',
-                            900: '#614030',
-                        },
-                        'navy': {
-                            50: '#f0f4ff',
-                            100: '#e0e7ff',
-                            200: '#c7d2fe',
-                            300: '#a5b4fc',
-                            400: '#818cf8',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            800: '#3730a3',
-                            900: '#312e81',
-                        }
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.8s ease-in-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'float': 'float 3s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(30px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #312e81 0%, #4338ca 25%, #4f46e5 50%, #6366f1 75%, #818cf8 100%);
-        }
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        .scroll-indicator {
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 20%, 53%, 80%, 100% {
-                transform: translate3d(0,0,0);
-            }
-            40%, 43% {
-                transform: translate3d(0,-30px,0);
-            }
-            70% {
-                transform: translate3d(0,-15px,0);
-            }
-            90% {
-                transform: translate3d(0,-4px,0);
-            }
-        }
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Jarar Ali — Dubai Real Estate &amp; Investment Consultant</title>
+<meta name="description" content="Premium real estate consultant in Dubai. Properties, Golden Visa, virtual offices, labor camps. Contact Jarar Ali +971 54 7750859">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+@media(max-width:768px){#desktopNav{display:none!important}#menuBtn{display:block!important}}
+</style>
 </head>
-<body class="font-inter bg-gray-50 text-gray-900">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-effect transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-mocha-500 to-mocha-700 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-building text-white text-lg"></i>
-                    </div>
-                    <h1 class="text-xl font-bold font-playfair text-white">Dubai Investment Solutions</h1>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#services" class="text-white hover:text-mocha-300 transition-colors duration-300 font-medium">Services</a>
-                    <a href="#about" class="text-white hover:text-mocha-300 transition-colors duration-300 font-medium">About</a>
-                    <a href="#contact" class="text-white hover:text-mocha-300 transition-colors duration-300 font-medium">Contact</a>
-                    <a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank" class="text-white hover:text-mocha-300 transition-colors duration-300">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="#contact" class="bg-mocha-500 hover:bg-mocha-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
-                        Get Started
-                    </a>
-                </div>
-                <button class="md:hidden text-white text-2xl" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- Mobile Menu -->
-    <div class="fixed inset-0 z-40 bg-navy-900 bg-opacity-95 hidden" id="mobile-menu">
-        <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <a href="#services" class="text-white text-2xl font-medium hover:text-mocha-300 transition-colors">Services</a>
-            <a href="#about" class="text-white text-2xl font-medium hover:text-mocha-300 transition-colors">About</a>
-            <a href="#contact" class="text-white text-2xl font-medium hover:text-mocha-300 transition-colors">Contact</a>
-            <a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank" class="text-white text-2xl hover:text-mocha-300 transition-colors">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#contact" class="bg-mocha-500 hover:bg-mocha-600 text-white px-8 py-3 rounded-full font-semibold text-xl">
-                Get Started
-            </a>
-        </div>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/971547750859" target="_blank" class="fab-whatsapp" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="navbar">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+    <a href="#home" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+      <svg class="nav-logo-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e8c97a"/><stop offset="100%" stop-color="#9a7a2a"/></linearGradient></defs>
+        <path d="M22 2L40 12L40 32L22 42L4 32L4 12Z" fill="url(#lg)"/>
+        <rect x="20" y="8" width="4" height="22" fill="white"/>
+        <rect x="14" y="17" width="6" height="13" fill="white"/>
+        <rect x="24" y="17" width="6" height="13" fill="white"/>
+        <rect x="12" y="29" width="20" height="2.5" fill="white"/>
+        <rect x="21" y="11" width="2" height="2" fill="#c9a84c"/>
+        <rect x="21" y="15" width="2" height="2" fill="#c9a84c"/>
+      </svg>
+      <div class="nav-wordmark"><span>Dubai Investment</span><span>Solutions</span></div>
+    </a>
+    <div id="desktopNav" style="display:flex;align-items:center;gap:32px;">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank" class="nav-link"><i class="fab fa-linkedin" style="font-size:1.2rem;"></i></a>
+      <a href="https://wa.me/971547750859" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
+    <button id="menuBtn" style="display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-mocha-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-            <div class="absolute top-40 right-10 w-72 h-72 bg-navy-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-mocha-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style="animation-delay: 4s;"></div>
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="hidden" style="position:fixed;inset:0;z-index:998;background:rgba(8,13,26,0.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:32px;">
+  <a href="#services" style="font-size:1.5rem;color:#fff;font-weight:600;text-decoration:none;">Services</a>
+  <a href="#about" style="font-size:1.5rem;color:#fff;font-weight:600;text-decoration:none;">About</a>
+  <a href="#contact" style="font-size:1.5rem;color:#fff;font-weight:600;text-decoration:none;">Contact</a>
+  <a href="https://wa.me/971547750859" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&h=1080&fit=crop&q=85');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="container" style="padding-top:140px;padding-bottom:200px;position:relative;z-index:2;">
+    <div class="hero-content">
+      <div class="hero-overline">Dubai's Premier Investment Consultant</div>
+      <h1 class="hero-title">Your Gateway to<br><span class="typewriter-wrap"><span id="typewriter">Dubai Properties</span><span class="cursor"></span></span></h1>
+      <p class="hero-subtitle">Unlock exclusive investment opportunities — premium properties, Golden Visa pathways, virtual &amp; physical offices, and business solutions in the UAE.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/971547750859" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+        <a href="#services" class="btn-outline">Explore Services</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="container">
+      <div class="hero-stats-inner">
+        <div class="hero-stat"><div class="hero-stat-num" data-counter="500" data-suffix="+">0+</div><div class="hero-stat-label">Properties Handled</div></div>
+        <div class="hero-stat"><div class="hero-stat-num" data-counter="8" data-suffix="+">0+</div><div class="hero-stat-label">Years Experience</div></div>
+        <div class="hero-stat"><div class="hero-stat-num" data-counter="200" data-suffix="+">0+</div><div class="hero-stat-label">Happy Clients</div></div>
+        <div class="hero-stat"><div class="hero-stat-num" data-counter="100" data-suffix="%">0%</div><div class="hero-stat-label">Client Satisfaction</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section" style="background:#f8f9fc;">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:64px;">
+      <div class="section-label" style="justify-content:center;">What We Offer</div>
+      <h2 class="section-title">Premium Services</h2>
+      <p class="section-subtitle" style="margin:0 auto;text-align:center;">Comprehensive solutions for investors, businesses and corporations in Dubai</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Virtual Offices -->
+      <div class="service-card reveal reveal-delay-1" data-service="Virtual Offices">
+        <img src="virtual_office.png" alt="Virtual Office Dubai" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-icon ocean"><i class="fas fa-building"></i></div>
+          <h3 class="service-card-title">Virtual Offices</h3>
+          <p class="service-card-desc">Affordable virtual offices in prime Dubai locations. Ideal for license renewal, visa applications, and family sponsorship with full Ejari support.</p>
+          <ul class="service-card-list">
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Prime Dubai locations</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Full Ejari support</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Family sponsorship assistance</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Business centers &amp; residential</li>
+          </ul>
+          <button class="btn-inquire">Inquire Now &rarr;</button>
         </div>
-        
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <div class="animate-fade-in">
-                <h2 class="text-5xl md:text-7xl font-bold font-playfair text-white mb-6 leading-tight">
-                    Invest Smart,<br>
-                    <span class="text-mocha-300">Invest in Dubai</span>
-                </h2>
-                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    Unlock exclusive investment opportunities with premium properties, Golden Visa pathways, and comprehensive business solutions in the heart of the UAE.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#contact" class="bg-mocha-500 hover:bg-mocha-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                        <i class="fas fa-rocket mr-2"></i>
-                        Start Your Journey
-                    </a>
-                    <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-navy-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
-                        <i class="fas fa-play mr-2"></i>
-                        Explore Services
-                    </a>
-                </div>
-            </div>
+      </div>
+
+      <!-- Physical Offices -->
+      <div class="service-card reveal reveal-delay-2" data-service="Physical Offices">
+        <div class="card-carousel"><div style="overflow:hidden;position:relative;height:200px;">
+          <div class="carousel-track" style="display:flex;height:100%;transition:transform 0.4s ease;">
+            <div class="carousel-slide" style="min-width:100%;"><img src="physical_office1.png" alt="Physical Office" style="width:100%;height:200px;object-fit:cover;"></div>
+            <div class="carousel-slide" style="min-width:100%;"><img src="physical_office2.png" alt="Physical Office 2" style="width:100%;height:200px;object-fit:cover;"></div>
+          </div>
+          <button class="carousel-prev" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;z-index:2;"><i class="fas fa-chevron-left" style="font-size:.75rem;"></i></button>
+          <button class="carousel-next" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;z-index:2;"><i class="fas fa-chevron-right" style="font-size:.75rem;"></i></button>
+        </div></div>
+        <div class="service-card-body">
+          <div class="service-icon ocean"><i class="fas fa-city"></i></div>
+          <h3 class="service-card-title">Physical Offices</h3>
+          <p class="service-card-desc">Fully furnished offices with DEWA, Wi-Fi, meeting rooms, pantry, and parking. Modern shared spaces in prime Dubai locations.</p>
+          <ul class="service-card-list">
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Fully furnished spaces</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>DEWA &amp; Wi-Fi included</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Meeting &amp; conference rooms</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Parking available</li>
+          </ul>
+          <button class="btn-inquire">Inquire Now &rarr;</button>
         </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
-            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-                <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-            </div>
+      </div>
+
+      <!-- Property Investment -->
+      <div class="service-card reveal reveal-delay-3" data-service="Property Investment">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=300&fit=crop" alt="Dubai Luxury Property" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-icon gold"><i class="fas fa-home"></i></div>
+          <h3 class="service-card-title">Property Investment</h3>
+          <p class="service-card-desc">Exclusive luxury properties across Dubai's finest communities. Apartments, penthouses, villas — off-plan and ready to move.</p>
+          <ul class="service-card-list">
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Apartments, Penthouses &amp; Villas</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Off-plan from top developers</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Ready-to-move options</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>ROI-focused investment advice</li>
+          </ul>
+          <button class="btn-inquire">Inquire Now &rarr;</button>
         </div>
-    </section>
+      </div>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate-slide-up">
-                <h2 class="text-4xl md:text-5xl font-bold font-playfair text-navy-900 mb-6">
-                    Premium Services
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Comprehensive solutions tailored for your success in Dubai's dynamic business landscape
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Virtual Offices -->
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-16 h-16 bg-gradient-to-br from-mocha-500 to-mocha-700 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-building text-white text-2xl"></i>
-                    </div>
-            <!-- Virtual Offices -->
-            <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                <div class="w-16 h-16 bg-gradient-to-br from-navy-500 to-navy-700 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-building text-white text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold font-playfair text-navy-900 mb-4">Virtual Offices</h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    Affordable virtual offices in prime Dubai locations. Ideal for license renewal, visa applications, and  sponsoring family. we help you choose the right Ejari at the right price.
-                </p>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Prime Dubai locations</li>
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Full Ejari support</li>
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> sponsoring family</li>
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Separate offices, business centers, and residential options</li>
-                </ul>
-            </div>
-            
-            <!-- Physical Offices -->
-            <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                <div class="w-16 h-16 bg-gradient-to-br from-navy-500 to-navy-700 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-city text-white text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold font-playfair text-navy-900 mb-4">Physical Offices</h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    Fully furnished offices in prime locations with DEWA, Wi-Fi, meeting rooms, pantry, and parking. Modern shared spaces designed for productivity and professional meetings.
-                </p>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Fully furnished spaces</li>
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> DEWA & Wi-Fi included</li>
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Meeting & conference rooms with parking</li>
-                </ul>
-            </div>
-            
-            <!-- Property Investment -->
-            <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                <div class="w-16 h-16 bg-gradient-to-br from-mocha-600 to-mocha-800 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-home text-white text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold font-playfair text-navy-900 mb-4">Property Investment</h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    Exclusive investment opportunities and ready-to-move properties. From luxury apartments to premium villas, we offer the finest real estate portfolio.
-                </p>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Apartments, Penthouses, Villas, Townhouses</li>
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Off-plan properties from developers</li>
-                    <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Investment & ready-to-move options</li>
-                </ul>
-            </div>
-
-
-                <!-- Data Analysis -->
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-16 h-16 bg-gradient-to-br from-navy-600 to-navy-800 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold font-playfair text-navy-900 mb-4">Data Analysis</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Advanced analytics and market insights to drive informed investment decisions and optimize your business strategies in the UAE market.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Market analysis</li>
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Investment insights</li>
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Strategic planning</li>
-                    </ul>
-                </div>
-
-                <!-- Creative Services -->
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-16 h-16 bg-gradient-to-br from-mocha-500 to-mocha-700 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-palette text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold font-playfair text-navy-900 mb-4">Creative Design</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Professional branding and design services including logo design, marketing materials, and social media content to elevate your brand presence.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Logo & brand design</li>
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Marketing materials</li>
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Social media content</li>
-                    </ul>
-                </div>
-
-                <!-- Digital Marketing -->
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-16 h-16 bg-gradient-to-br from-navy-500 to-navy-700 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-rocket text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold font-playfair text-navy-900 mb-4">Digital Marketing</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Comprehensive digital marketing solutions to boost your online presence, drive engagement, and accelerate business growth in the digital landscape.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> SEO optimization</li>
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Social media marketing</li>
-                        <li class="flex items-center"><i class="fas fa-check text-mocha-500 mr-2"></i> Content strategy</li>
-                    </ul>
-                </div>
-            </div>
+      <!-- Labor Camps -->
+      <div class="service-card reveal reveal-delay-1" data-service="Labor Camps">
+        <div class="card-carousel"><div style="overflow:hidden;position:relative;height:200px;">
+          <div class="carousel-track" style="display:flex;height:100%;transition:transform 0.4s ease;">
+            <div class="carousel-slide" style="min-width:100%;"><img src="labor_accomodation1.png" alt="Labor Accommodation" style="width:100%;height:200px;object-fit:cover;"></div>
+            <div class="carousel-slide" style="min-width:100%;"><img src="labor_accomodation2.png" alt="Labor Accommodation 2" style="width:100%;height:200px;object-fit:cover;"></div>
+          </div>
+          <button class="carousel-prev" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;z-index:2;"><i class="fas fa-chevron-left" style="font-size:.75rem;"></i></button>
+          <button class="carousel-next" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;z-index:2;"><i class="fas fa-chevron-right" style="font-size:.75rem;"></i></button>
+        </div></div>
+        <div class="service-card-body">
+          <div class="service-icon gold"><i class="fas fa-warehouse"></i></div>
+          <h3 class="service-card-title">Labor Camps</h3>
+          <p class="service-card-desc">Ready labor camps &amp; staff accommodation in Al Quoz &amp; Jebel Ali. Executive apartments in JVC also available. Quick Ejari, flexible terms.</p>
+          <ul class="service-card-list">
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Al Quoz &amp; Jebel Ali locations</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Large capacity available now</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Flexible long-term pricing</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Quick move-in support</li>
+          </ul>
+          <button class="btn-inquire">Inquire Now &rarr;</button>
         </div>
-    </section>
+      </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-br from-gray-50 to-mocha-50">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="animate-slide-up">
-                    <h2 class="text-4xl md:text-5xl font-bold font-playfair text-navy-900 mb-6">
-                        Why Choose Dubai Investment Solutions?
-                    </h2>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        With deep expertise in Dubai's business landscape and a commitment to excellence, we provide unparalleled service and results for our clients.
-                    </p>
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-mocha-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-award text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold text-navy-900 mb-2">Expert Guidance</h4>
-                                <p class="text-gray-600">Years of experience navigating Dubai's business and investment landscape.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-navy-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-handshake text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold text-navy-900 mb-2">Personalized Service</h4>
-                                <p class="text-gray-600">Tailored solutions that meet your specific business and investment needs.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-mocha-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-globe text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold text-navy-900 mb-2">Global Network</h4>
-                                <p class="text-gray-600">Extensive connections across Dubai's business and real estate sectors.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <img src="./images/dubai_skyline.png" alt="Dubai Skyline" class="w-full h-96 object-cover rounded-3xl">
-                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-mocha-500 rounded-2xl flex items-center justify-center animate-float">
-                        <i class="fas fa-star text-white text-2xl"></i>
-                    </div>
-                </div>
-            </div>
+      <!-- Data Analysis -->
+      <div class="service-card reveal reveal-delay-2" data-service="Data Analysis">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop" alt="Data Analysis Dubai" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-icon ocean"><i class="fas fa-chart-line"></i></div>
+          <h3 class="service-card-title">Data Analysis</h3>
+          <p class="service-card-desc">Advanced market analytics and investment insights to drive informed decisions in the UAE property market.</p>
+          <ul class="service-card-list">
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Dubai market analysis</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Investment ROI insights</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Strategic planning reports</li>
+          </ul>
+          <button class="btn-inquire">Inquire Now &rarr;</button>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-navy-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold font-playfair text-white mb-6">
-                    Ready to Get Started?
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Contact us today to discuss your investment goals and discover the opportunities waiting for you in Dubai.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Info -->
-                <div class="space-y-8">
-                    <div class="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-2xl border border-white border-opacity-20">
-                        <h3 class="text-2xl font-bold font-playfair text-white mb-6">Get in Touch</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-mocha-500 rounded-full flex items-center justify-center">
-                                    <i class="fab fa-whatsapp text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="text-gray-300 text-sm">Phone / WhatsApp</p>
-                                    <p class="text-white font-semibold text-lg">+971 54 7750859</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-navy-500 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-envelope text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="text-gray-300 text-sm">Email</p>
-                                    <p class="text-white font-semibold text-lg">jararali11@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-mocha-600 rounded-full flex items-center justify-center">
-                                    <i class="fab fa-linkedin text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="text-gray-300 text-sm">LinkedIn</p>
-                                    <a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank" class="text-white font-semibold text-lg hover:text-mocha-300 transition-colors">
-                                        Jarar Ali
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Contact Form -->
-                <div class="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-2xl border border-white border-opacity-20">
-                    <h3 class="text-2xl font-bold font-playfair text-white mb-6">Send us a Message</h3>
-                    <iframe 
-                        src="https://docs.google.com/forms/d/e/1FAIpQLScwOya7RHrX4OPORqlb7Tv9f0XUK0cbuQNCKw0GPOoXh9aspA/viewform?pli=1" 
-                        width="100%" 
-                        height="600" 
-                        frameborder="0" 
-                        marginheight="0" 
-                        marginwidth="0"
-                        class="rounded-xl">
-                        Loading…
-                    </iframe>
-                </div>
-            </div>
+      <!-- Creative Design -->
+      <div class="service-card reveal reveal-delay-3" data-service="Creative Design">
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop" alt="Creative Design Dubai" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-icon gold"><i class="fas fa-palette"></i></div>
+          <h3 class="service-card-title">Creative Design</h3>
+          <p class="service-card-desc">Professional branding, logo design, and marketing materials to elevate your business in Dubai's competitive market.</p>
+          <ul class="service-card-list">
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Logo &amp; brand identity</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Marketing materials</li>
+            <li><span class="check-icon"><i class="fas fa-check"></i></span>Social media content</li>
+          </ul>
+          <button class="btn-inquire">Inquire Now &rarr;</button>
         </div>
-    </section>
+      </div>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-mocha-500 to-mocha-700 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-building text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-playfair">Dubai Investment Solutions</h3>
-                    </div>
-                    <p class="text-gray-400 leading-relaxed">
-                        Your trusted partner for premium real estate investments and comprehensive business solutions in Dubai.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="text-gray-400 hover:text-mocha-300 transition-colors">Services</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-mocha-300 transition-colors">About</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-mocha-300 transition-colors">Contact</a></li>
-                        <li><a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank" class="text-gray-400 hover:text-mocha-300 transition-colors">LinkedIn</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Virtual Offices</li>
-                        <li>Physical Offices</li>
-                        <li>Property Investment</li>
-                        <li>Data Analysis</li>
-                        <li>Creative Design</li>
-                        <li>Digital Marketing</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2025 Dubai Investment Solutions. All rights reserved.</p>
-            </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DUBAI -->
+<section class="section section-dark" id="why-dubai">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:64px;">
+      <div class="section-label" style="justify-content:center;">The Smart Choice</div>
+      <h2 class="section-title" style="color:#fff;">Why Invest in Dubai?</h2>
+      <p class="section-subtitle light" style="margin:0 auto;text-align:center;">The world's most investor-friendly city — here's why thousands choose Dubai every year</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon"><i class="fas fa-percent"></i></div>
+        <h3 class="why-title">0% Income Tax</h3>
+        <p class="why-desc">Dubai offers a completely tax-free environment for individuals and businesses. Keep 100% of your rental income and capital gains.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon"><i class="fas fa-id-card"></i></div>
+        <h3 class="why-title">Golden Visa Pathway</h3>
+        <p class="why-desc">Invest AED 2 million+ in property and qualify for the UAE 10-year Golden Visa — giving you and your family long-term residency and security.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon"><i class="fas fa-globe"></i></div>
+        <h3 class="why-title">Global Hub</h3>
+        <p class="why-desc">Strategically located between East and West, Dubai offers world-class infrastructure, political stability, and the highest quality of life in the region.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&h=600&fit=crop" alt="Dubai Skyline" class="about-img">
+        <div class="about-badge">
+          <div class="about-badge-num">8+</div>
+          <div class="about-badge-text">Years in Dubai Real Estate</div>
         </div>
-    </footer>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Why Choose Dubai Investment Solutions?</h2>
+        <p style="font-size:1rem;color:#5a6a88;line-height:1.8;margin-bottom:36px;">With deep expertise in Dubai's dynamic property and business landscape, I provide personalized, end-to-end investment solutions — from finding the right property to securing your residency and business setup.</p>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fas fa-award"></i></div>
+          <div><div class="about-feature-title">Expert Guidance</div><p class="about-feature-desc">Years of experience navigating Dubai's evolving real estate and business environment.</p></div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fas fa-handshake"></i></div>
+          <div><div class="about-feature-title">Personalized Service</div><p class="about-feature-desc">Every client gets a tailored strategy — your goals, your timeline, your budget.</p></div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fas fa-network-wired"></i></div>
+          <div><div class="about-feature-title">Strong Network</div><p class="about-feature-desc">Direct relationships with top developers, landlords, and government authorities in Dubai.</p></div>
+        </div>
+        <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="https://wa.me/971547750859" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+          <a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank" class="btn-outline" style="border-color:#1a2240;color:#1a2240;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+<!-- TESTIMONIALS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:64px;">
+      <div class="section-label" style="justify-content:center;">Client Stories</div>
+      <h2 class="section-title" style="color:#fff;">What Our Clients Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">&ldquo;Jarar helped me find the perfect off-plan apartment in Dubai Marina. The entire process was smooth, transparent, and stress-free. Highly recommended!&rdquo;</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div><div class="testimonial-name">Ahmed Al-Rashid</div><div class="testimonial-role">Property Investor, Saudi Arabia</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">&ldquo;We needed a virtual office for license renewal and Jarar sorted everything within 24 hours. Professional, responsive, and great value.&rdquo;</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div><div class="testimonial-name">Sarah Mitchell</div><div class="testimonial-role">Business Owner, UK</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">&ldquo;Excellent labor camp arrangement for our 200-person workforce. Quick Ejari, fair pricing, and the team was incredibly supportive throughout.&rdquo;</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">R</div>
+          <div><div class="testimonial-name">Rajesh Kumar</div><div class="testimonial-role">Operations Director, Construction Co.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Close mobile menu when clicking on links
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
-                mobileMenu.classList.add('hidden');
-            }
-        });
+<!-- CONTACT -->
+<section id="contact" class="section section-dark">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:64px;">
+      <div class="section-label" style="justify-content:center;">Get in Touch</div>
+      <h2 class="section-title" style="color:#fff;">Ready to Start?</h2>
+      <p class="section-subtitle light" style="margin:0 auto;text-align:center;">Contact me today to discuss your investment goals and discover the opportunities waiting for you in Dubai.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info-card reveal">
+        <h3 style="font-family:Playfair Display,serif;font-size:1.4rem;color:#fff;margin-bottom:8px;">Jarar Ali</h3>
+        <p style="color:#8899bb;font-size:0.9rem;margin-bottom:28px;">Dubai Real Estate &amp; Investment Consultant</p>
+        <div class="contact-item">
+          <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="contact-label">Phone / WhatsApp</div>
+            <div class="contact-value"><a href="https://wa.me/971547750859" target="_blank">+971 54 7750859</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:jararali11@gmail.com">jararali11@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon linkedin"><i class="fab fa-linkedin"></i></div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value"><a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank">Jarar Ali</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-card reveal reveal-delay-2">
+        <h3 style="font-family:Playfair Display,serif;font-size:1.4rem;color:#fff;margin-bottom:24px;">Send a Message</h3>
+        <form id="mainContactForm" action="https://formsubmit.co/jararali11@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Website Inquiry">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Your Name</label><input type="text" name="name" class="form-input" placeholder="Full Name" required></div>
+            <div class="form-group"><label class="form-label">WhatsApp / Phone</label><input type="tel" name="phone" class="form-input" placeholder="+971 50 123 4567" required></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="your@email.com" required></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea name="message" class="form-input" rows="4" placeholder="Tell me about your investment goals..." style="resize:none;"></textarea></div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:14px;"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Navbar background on scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('bg-navy-900', 'bg-opacity-95');
-            } else {
-                navbar.classList.remove('bg-navy-900', 'bg-opacity-95');
-            }
-        });
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <svg style="width:38px;height:38px;" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="flg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e8c97a"/><stop offset="100%" stop-color="#9a7a2a"/></linearGradient></defs><path d="M22 2L40 12L40 32L22 42L4 32L4 12Z" fill="url(#flg)"/><rect x="20" y="8" width="4" height="22" fill="white"/><rect x="14" y="17" width="6" height="13" fill="white"/><rect x="24" y="17" width="6" height="13" fill="white"/><rect x="12" y="29" width="20" height="2.5" fill="white"/></svg>
+          <div style="font-family:Playfair Display,serif;color:#fff;font-weight:700;font-size:1rem;">Dubai Investment Solutions</div>
+        </div>
+        <p class="footer-brand-desc">Your trusted partner for premium real estate investments, virtual offices, and comprehensive business solutions in Dubai, UAE.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Virtual Offices</a></li>
+          <li><a href="#services">Physical Offices</a></li>
+          <li><a href="#services">Property Investment</a></li>
+          <li><a href="#services">Labor Camps</a></li>
+          <li><a href="#services">Data Analysis</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Dubai Investment Solutions &mdash; Jarar Ali. All rights reserved.</p>
+      <div style="display:flex;gap:16px;">
+        <a href="https://wa.me/971547750859" target="_blank" style="color:#8899bb;font-size:1.2rem;transition:color 0.2s;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#8899bb'"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/jarar-ali-aa62301b2" target="_blank" style="color:#8899bb;font-size:1.2rem;transition:color 0.2s;" onmouseover="this.style.color='#0077B5'" onmouseout="this.style.color='#8899bb'"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:jararali11@gmail.com" style="color:#8899bb;font-size:1.2rem;transition:color 0.2s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#8899bb'"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+<!-- MODAL -->
+<div id="modal" class="modal-backdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modalTitle">Inquire About Service</h3>
+      <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+    </div>
+    <p class="modal-desc" id="modalDesc"></p>
+    <form id="modalForm" class="modal-form">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Name *</label><input type="text" name="name" class="form-input" placeholder="Your Full Name" required></div>
+        <div class="form-group"><label class="form-label">WhatsApp *</label><input type="tel" name="whatsapp" class="form-input" placeholder="+971 50 123 4567" required></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email *</label><input type="email" name="email" class="form-input" placeholder="your@email.com" required></div>
+      <div class="form-group"><label class="form-label">Message</label><textarea name="message" class="form-input" rows="3" placeholder="Tell me more about your needs..." style="resize:none;"></textarea></div>
+      <button type="submit" class="btn-inquire" style="font-size:1rem;padding:14px;"><i class="fas fa-paper-plane"></i> &nbsp;Send Inquiry</button>
+      <div class="success-msg" id="modalSuccess"><i class="fas fa-check-circle" style="color:#059669;"></i> Thank you! We will contact you shortly via WhatsApp or Email.</div>
+    </form>
+  </div>
+</div>
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            observer.observe(card);
-        });
-    </script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
-
